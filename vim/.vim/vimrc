@@ -1,2 +1,5 @@
+# Set viminfo folder
+set viminfo+=n~/.vim/viminfo
+
 " Number Line
 set nu
