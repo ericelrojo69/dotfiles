@@ -6,4 +6,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Prompt
-export PS1="[\w]\n\\$\[$(tput sgr0)\] "
+PS1="\W\\$\[$(tput sgr0)\]"
+
+# Vi mode
+set -o vi
