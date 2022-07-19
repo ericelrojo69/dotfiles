@@ -1,8 +1,0 @@
-! Screen settings
-
-Xft.dpi: 192
-
-! Urxvt
-
-URxvt.font: xft:Monospace
-URxvt.scrollBar: false
