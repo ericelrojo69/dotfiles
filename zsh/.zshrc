@@ -2,6 +2,10 @@
 alias vi=nvim
 alias vim=nvim
 
+#Alias change keyboard
+alias setus=localectl set-x11-keymap us
+alias setes=localectl set-x11-keymap es
+
 #Prompt
 PS1='%F{green}%n %F{blue}%~ %#%f '
 
