@@ -1,0 +1,3 @@
+  VG  #PV #LV #SN Attr   VSize  VFree 
+  vg1   2   0   0 wz--n- 39.99g 39.99g
+  vg2   2   0   0 wz--n- 39.99g 39.99g
