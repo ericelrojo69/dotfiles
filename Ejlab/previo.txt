@@ -7,3 +7,11 @@ Salida de lvmscan:
   0 LVM physical volume whole disks
   0 LVM physical volumes
 
+2)
+1.
+La diferencia es que al agregar la diagonal al final que se sincronizara el contenido del directorio /etc y no el directorio en sí mismo,
+por el contrario Si se omite la barra diagonal, entonces el directorio /etc será copiado en /mnt/bkup, incluyendo también el directorio.
+2.
+Para eso podemos usar la opcion --delete dentro del comando rsync.
+
+3)
