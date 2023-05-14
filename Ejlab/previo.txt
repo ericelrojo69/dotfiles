@@ -15,3 +15,23 @@ por el contrario Si se omite la barra diagonal, entonces el directorio /etc serÃ
 Para eso podemos usar la opcion --delete dentro del comando rsync.
 
 3)
+Script procesa_listado.sh:
+#!/bin/bash
+
+# Leer la entrada estÃ¡ndar
+# Usamos IFS como variable de entorno para separar los parametros de entrada por el coma
+while IFS=',' read -r directorio fichero contenido; do
+  # Ignorar el encabezado
+  if [[ "$directorio" == "directorio" ]]; then
+    continue
+  fi
+
+  # Crear el directorio si no existe
+  if [[ ! -d "$directorio" ]]; then
+    mkdir "$directorio"
+  fi
+
+  # Crear el archivo dentro del directorio
+  echo -n "$contenido" > "$directorio/$fichero"
+done
+
