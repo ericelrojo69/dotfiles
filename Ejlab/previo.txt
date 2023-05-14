@@ -1,0 +1,9 @@
+1)
+Salida de lvmscan:
+  /dev/vda1 [     <20.00 GiB] 
+  /dev/vdb1 [     <10.00 GiB] 
+  0 disks
+  2 partitions
+  0 LVM physical volume whole disks
+  0 LVM physical volumes
+
