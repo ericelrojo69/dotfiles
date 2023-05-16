@@ -1,0 +1,37 @@
+1)
+Salida de lvmscan:
+  /dev/vda1 [     <20.00 GiB] 
+  /dev/vdb1 [     <10.00 GiB] 
+  0 disks
+  2 partitions
+  0 LVM physical volume whole disks
+  0 LVM physical volumes
+
+2)
+1.
+La diferencia es que al agregar la diagonal al final que se sincronizara el contenido del directorio /etc y no el directorio en sí mismo,
+por el contrario Si se omite la barra diagonal, entonces el directorio /etc será copiado en /mnt/bkup, incluyendo también el directorio.
+2.
+Para eso podemos usar la opcion --delete dentro del comando rsync.
+
+3)
+Script procesa_listado.sh:
+#!/bin/bash
+
+# Leer la entrada estándar
+# Usamos IFS como variable de entorno para separar los parametros de entrada por el coma
+while IFS=',' read -r directorio fichero contenido; do
+  # Ignorar el encabezado
+  if [[ "$directorio" == "directorio" ]]; then
+    continue
+  fi
+
+  # Crear el directorio si no existe
+  if [[ ! -d "$directorio" ]]; then
+    mkdir "$directorio"
+  fi
+
+  # Crear el archivo dentro del directorio
+  echo -n "$contenido" > "$directorio/$fichero"
+done
+

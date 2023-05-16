@@ -1,0 +1,80 @@
+1)
+
+Salida de lvmdiskscan:
+
+lvmdiskscan 
+  /dev/sda  [     100.00 GiB] 
+  /dev/vda1 [     <20.00 GiB] 
+  /dev/sdb  [     500.00 GiB] 
+  /dev/vdb1 [     <10.00 GiB] 
+  /dev/sdc  [     100.00 GiB] 
+  /dev/sdd  [     100.00 GiB] 
+  4 disks
+  2 partitions
+  0 LVM physical volume whole disks
+  0 LVM physical volumes
+
+2)
+Salida de la orden:
+df -hT
+ttr PSize    PFree   
+/dev/sda   vg1 lvm2 a--  <100.00g  <50.00g
+/dev/sdb   vg1 lvm2 a--  <500.00g <500.00g
+/dev/sdc   vg1 lvm2 a--  <100.00g <100.00g
+
+pvs
+PV         VG  Fmt  Attr PSize    PFree   
+  /dev/sda   vg1 lvm2 a--  <100.00g  <50.00g
+  /dev/sdb   vg1 lvm2 a--  <500.00g <500.00g
+  /dev/sdc   vg1 lvm2 a--  <100.00g <100.00g
+
+vgs
+ VG  #PV #LV #SN Attr   VSize    VFree   
+  vg1   3   1   0 wz--n- <699.99g <649.99g
+
+lvs
+ VG  #PV #LV #SN Attr   VSize    VFree   
+  vg1   3   1   0 wz--n- <699.99g <649.99g
+3)
+Salida orden:
+df -hT
+Filesystem              Type      Size  Used Avail Use% Mounted on
+udev                    devtmpfs  463M     0  463M   0% /dev
+tmpfs                   tmpfs      98M  968K   97M   1% /run
+/dev/vda1               ext4       20G  4.4G   15G  24% /
+tmpfs                   tmpfs     489M     0  489M   0% /dev/shm
+tmpfs                   tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+/dev/mapper/vg1-lv_home ext4       49G   17M   47G   1% /home
+tmpfs                   tmpfs      98M   40K   98M   1% /run/user/0
+/dev/mapper/vg1-lv_data ext4      639G   32K  607G   1% /mnt/data
+shared                  virtiofs   89G   18G   66G  22% /mnt/shared
+
+pvs
+  PV         VG  Fmt  Attr PSize    PFree
+  /dev/sda   vg1 lvm2 a--  <100.00g    0 
+  /dev/sdb   vg1 lvm2 a--  <500.00g    0 
+  /dev/sdc   vg1 lvm2 a--  <100.00g    0
+
+vgs
+  VG  #PV #LV #SN Attr   VSize    VFree
+  vg1   3   2   0 wz--n- <699.99g    0
+
+lvs
+  LV      VG  Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lv_data vg1 -wi-ao---- <649.99g                                                    
+  lv_home vg1 -wi-ao----   50.00g
+4)
+Salida de las siguientes órdenes:
+
+df -hT /mnt/bkup
+ls -l /home/user/data/.
+ls -l /home/user1/bkup/data
+ls -l /home/user1
+pvs
+vgs
+lvs
+
+Copia de la orden completa para realizar la copia de seguridad.
+rsync -av data/ /home/user1/bkup/data
+
+Copia de la orden completa para descartar los cambios.
