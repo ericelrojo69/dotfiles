@@ -1,5 +1,0 @@
-  PV         VG  Fmt  Attr PSize   PFree  
-  /dev/sdb1  vg1 lvm2 a--  <20.00g <20.00g
-  /dev/sdc1  vg1 lvm2 a--  <20.00g <20.00g
-  /dev/sdd1  vg2 lvm2 a--  <20.00g <20.00g
-  /dev/sde1  vg2 lvm2 a--  <20.00g <20.00g

@@ -1,10 +1,5 @@
-# Alias neovim
-alias vi=nvim
-alias vim=nvim
-
-#Alias change keyboard
-alias setus=localectl set-x11-keymap us
-alias setes=localectl set-x11-keymap es
+# Alias vim
+alias vi=vim
 
 #Prompt
 PS1='%F{green}%n %F{blue}%~ %#%f '
@@ -19,4 +14,3 @@ alias ll='ls -la'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias vim=nvim

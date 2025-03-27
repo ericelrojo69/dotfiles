@@ -1,5 +1,0 @@
-  PV /dev/sdb1                      lvm2 [<20.00 GiB]
-  PV /dev/sdc1                      lvm2 [<20.00 GiB]
-  PV /dev/sdd1                      lvm2 [<20.00 GiB]
-  PV /dev/sde1                      lvm2 [<20.00 GiB]
-  Total: 4 [79.99 GiB] / in use: 0 [0   ] / in no VG: 4 [79.99 GiB]
